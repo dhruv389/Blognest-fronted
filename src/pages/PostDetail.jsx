@@ -37,7 +37,7 @@ setText(response.data.description);
     setIsLoading(false);
   }
   getPost();
-},[])
+},[id])
 
 if(isLoading) {
   return <Loader/>

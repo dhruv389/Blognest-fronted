@@ -6,7 +6,7 @@ import { PiMicrophoneSlashFill } from "react-icons/pi";
 const TextToSpeech = ({ text }) => {
   const [isPaused, setIsPaused] = useState(false);
   const [utterance, setUtterance] = useState(null);
-  const [voice, setVoice] = useState(null);
+  
   const [on,seton] = useState(false);
 
   useEffect(() => {
@@ -31,6 +31,7 @@ const TextToSpeech = ({ text }) => {
     } else {
    
       synth.speak(utterance);
+      setIsPaused(true);
     }
     seton(true);
 

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEdit } from "react-icons/fa";
+
 import { FaCheck } from "react-icons/fa";
 
 import { UserContext } from "../context/userContext";
@@ -29,7 +29,7 @@ const UserProfile = () => {
     if (!token) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate, token]);
 
   const changeAvatarHandler = async () => {
     setIsAvatarTouched(false);
@@ -64,7 +64,7 @@ const UserProfile = () => {
       setAvatar(avatar);
     };
     getUser();
-  }, []);
+  }, [currentUser.id, token]);
 
 
 

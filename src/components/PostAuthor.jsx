@@ -26,7 +26,7 @@ useEffect(()=>{
     }
   }
   getAuthor();
-},[])
+},[authorID])
 
 
   return (

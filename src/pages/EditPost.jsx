@@ -20,7 +20,7 @@ const EditPost = () => {
     if(!token ){
       navigate("/login");
     }
-  },[])
+  },[navigate,token])
 
 
 
@@ -73,7 +73,7 @@ useEffect(()=>{
   }
  }
  getPost();
-},[])
+},[id])
 
 
 const editPost = async (e)=>{

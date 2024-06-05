@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../Images/web-logo3.PNG";
+// import Logo from "../Images/web-logo3.PNG";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { AiOutlineClose } from "react-icons/ai";
-import aos from "aos";
+
 import { UserContext } from "../context/userContext";
 
 const Header = () => {
@@ -13,18 +13,21 @@ const Header = () => {
   const loc = useLocation();
   console.log(loc.pathname);
 
-  const closeNavHandler = () => {
-    if (window.inner < 800) {
-      setIsNavshowing(false);
-    } else setIsNavshowing(true);
-  };
+  // const closeNavHandler = () => {
+  //   if (window.inner < 800) {
+  //     setIsNavshowing(false);
+  //   } else setIsNavshowing(true);
+  // };
   return (
     <nav>
       <div className="container nav_container">
-        <div className="nav_logo">
-          
-          <h3>Website</h3>
+      <Link to={"/"}>
+      <div className="nav_logo">
+          {/* <img src={Logo} alt="" /> */}
+          <h3>Blog Nest</h3>
         </div>
+      </Link>
+        
 
         {/* ==================================in Mobile Mode======================================================= */}
         {currentUser?.id && isNavshowing && (

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import React, { useEffect,useState } from "react";
+import React from "react";
 import PostAuthor from "./PostAuthor";
 
 
-import axios from "axios"
+
 
 
 
@@ -11,7 +11,7 @@ const PostItem = ({
   postID,
   category,
   title,
-  description,
+  // description,
   authorID,
   thumbnill,
   createdAt,
@@ -22,7 +22,7 @@ const PostItem = ({
 
   const postTitle = title.length > 30 ? title.substr(0, 30) + "..." : title;
  
-  const shortDescription =  description.length > 145 ? description.substr(0, 145) + "..." : description;
+  // const shortDescription =  description.length > 145 ? description.substr(0, 145) + "..." : description;
   return (
     <Link to={`/posts/${postID}`}>
     <article className="post">

@@ -31,7 +31,7 @@ const CreatePost = () => {
       navigate("/login");
     }
     // else console.log(token);
-  }, []);
+  }, [navigate, token]);
 
   const modules = {
     toolbar: [
@@ -92,7 +92,7 @@ const CreatePost = () => {
         }
       );
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         return navigate("/");
       }
     } catch (err) {

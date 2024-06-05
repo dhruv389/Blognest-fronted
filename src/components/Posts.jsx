@@ -13,7 +13,7 @@ import axios from "axios"
 
 
 import {UserContext} from "../context/userContext"
-import { Link,useNavigate } from 'react-router-dom'
+// import { Link,useNavigate } from 'react-router-dom'
 
 const Posts = () => {
   const[posts,setPosts]=useState([]);
@@ -39,7 +39,7 @@ const fetchPosts = async ()=>{
   setIsLoading(false);
 }
 fetchPosts();
-  },[])
+  },[token])
 
   if(isLoading)  { return <Loader/>}
 

@@ -22,7 +22,7 @@ const[posts,setPosts]=useState([]);
     if(!token ){
       navigate("/login");
     }
-  },[])
+  },[navigate,token])
 
 useEffect(()=>{
   const fetchPosts =async ()=>{
@@ -36,7 +36,7 @@ useEffect(()=>{
     setIsLoading(false);
   }
   fetchPosts();
-},[id])
+},[id,token])
 
 
 

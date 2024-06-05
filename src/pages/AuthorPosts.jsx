@@ -25,7 +25,7 @@ const fetchPosts = async ()=>{
   setIsLoading(false);
 }
 fetchPosts();
-  },[id])
+  },[id,posts])
 
   if(isLoading)   return <Loader/>
 

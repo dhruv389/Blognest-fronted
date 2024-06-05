@@ -1,14 +1,13 @@
 import React from "react";
 
 import "../index.css";
-import { Link } from "react-router-dom";
-import graph from "../Images/graph.png";
+
 import sti from "../Images/ho2.png";
 import st2 from "../Images/ho1.png";
 
 import Typewriter from 'typewriter-effect';
 
-import { Tilt } from "@jdion/tilt-react";
+
 
 
 const Fronted = () => {
