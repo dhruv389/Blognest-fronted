@@ -21,13 +21,13 @@ const DeletePost = ({postId: id}) => {
 
 
   const removePost= async (id)=>{
-  setIsLoading(true);
+ 
     try {
     
       const response = await axios.delete(`${process.env.REACT_APP_BASE_URL}/posts/${id}`,{withCredentials : true, headers:{Authorization : `Bearer ${token}`}})
-      console.log(response.status+"++++++++++++++++");
-      if(response.status == 200) {
-       if(location.pathname == `/myposts/${currentUser.id}`){
+      console.log(response.status);
+      if(response.status === 200) {
+       if(location.pathname === `/myposts/${currentUser.id}`){
         navigate(0);
 
        }
@@ -35,10 +35,10 @@ const DeletePost = ({postId: id}) => {
         window.alert("Post Deleted SucessFully😊");
         navigate('/');
        }
-       setIsLoading(false);
+      
       }
     } catch (error) {
-      console.log(error+"======")
+      console.log(error)
     }
   }
 

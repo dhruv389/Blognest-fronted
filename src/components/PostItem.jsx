@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect,useState } from "react";
 import PostAuthor from "./PostAuthor";
 
+
 import axios from "axios"
 
 
@@ -28,7 +29,7 @@ const PostItem = ({
       <div className="post_thumbnil">
         <img 
           src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${thumbnill}`}
-          alt={createdAt}
+          alt={"Thumbnail"}
         />
       </div>
       <div className="post_content">
@@ -36,7 +37,7 @@ const PostItem = ({
           <h3>{postTitle}</h3>
         </Link>
        
-        <p dangerouslySetInnerHTML={{__html : shortDescription}}/>
+        {/* <p dangerouslySetInnerHTML={{__html : shortDescription}}/> */}
         <div className="post_footer">
           <PostAuthor authorID={authorID} createdAt={createdAt} />
           <Link to={`/posts/categories/${category}`} className="btn category">

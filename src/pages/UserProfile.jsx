@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
-import ConfettiExplosion from "react-confetti-explosion";
+
 import { UserContext } from "../context/userContext";
 import axios from "axios";
 import blankprofile from "../Images/blank-profile1.jpg"
@@ -148,40 +148,6 @@ const UserProfile = () => {
         <Link to={`/myposts/${currentUser.id}`} className="btn sti">
           My posts
         </Link>
-        {/* <div className="avatar_background">
-          <div className="avatar_wrapper">
-            <div className="profile_avatar">
-            {!avatar &&   <img
-                src={blankprofile}
-                alt=""
-              /> }
-            { avatar &&   <img
-                src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`}
-                alt=""
-              />}
-            </div>
-            <form action="" className="avatar_form">
-              <input
-                type="file"
-                name="avatar"
-                id="avatar"
-                onChange={(e) => setAvatar(e.target.files[0])}
-                accept="png,jpg,heg"
-              />
-              <label htmlFor="avatar">
-                <BiSolidMessageSquareEdit  onClick={() => setIsAvatarTouched(true)} />
-              </label>
-            </form>
-            {isAvatarTouched && (
-              <button
-                className="profile_avatar-btn"
-                onClick={changeAvatarHandler}
-              >
-                <FaCheck />
-              </button>
-            )}
-          </div>
-          </div> */}
 
           <h1 style={{ marginBottom: "2rem", textDecorationLine: "underline" }}>
             {currentUser.name}

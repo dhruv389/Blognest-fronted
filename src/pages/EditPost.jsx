@@ -4,6 +4,7 @@ import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
 import { useNavigate ,useParams} from 'react-router-dom';
 import { UserContext } from '../context/userContext';
+
 import axios from "axios";
 const EditPost = () => {
 
@@ -88,11 +89,12 @@ const postData = new FormData();
   try {
   const response = await axios.patch(`${process.env.REACT_APP_BASE_URL}/posts/${id}`,postData,{withCredentials:true, headers :{Authorization:` Bearer ${token}`}})
 
-  if(response.status == 200) {
+  if(response.status === 200) {
   return navigate('/');
   }
 } catch (err) {
-  setError(err.response.data.message);
+  console.log(err);
+ setError(err.response.data.message);
 }
 }
 
@@ -107,7 +109,7 @@ const postData = new FormData();
         </p> }
         
          <form action="" className="form create-post_form" onSubmit={editPost}>
-          <input type="text" placeholder='Title' value={title}  onChange={e=>setTitle(e.target.value)} autofocus/>
+          <input type="text" placeholder='Title' value={title}  onChange={e=>setTitle(e.target.value)} autoFocus/>
           <select name="category"  value={category} onChange={e=>setCategory(e.target.value)}   id="">
             {
               POST_CATEGORIES.map(cat =><option key={cat}>{cat}</option> )
@@ -117,7 +119,7 @@ const postData = new FormData();
             <input type="file" onChange={e=>setThumbnill(e.target.files[0])} accept='png,jpg,jeg' />
             <button type="submit" className='btn primary'>Update</button>
          </form>
-      </div>
+     </div>
     </section>
   )
 }

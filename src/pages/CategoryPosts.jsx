@@ -3,6 +3,8 @@ import axios from "axios"
 import PostItem from '../components/PostItem';
 import Loader from '../components/Loader';
 import { useParams } from 'react-router-dom';
+ 
+ import ErrorPage from './ErrorPage';
 
 const CategoryPosts = () => {
 
@@ -30,15 +32,16 @@ fetchPosts();
 
   return (
      <section className="posts">
-    
+        <div className='righttext'><h1 style={{textDecoration:"underline" }}>{category}</h1></div>
    
-      {posts.length >0 ?   <div className="container posts_container">
+      {posts.length >0 ? <div className="container posts_container">
+          
         {
           posts.map(({ _id:id,thumbnill,category,title,description,creator,createdAt})=>
         <PostItem key={id} thumbnill={thumbnill} postID={id} category={category} title={title} description={description}  authorID={creator} createdAt={createdAt}/>  
         )
         }
-        </div> : <h2 className='center'>No posts found</h2>
+        </div> : <ErrorPage text={`Post Not Found`} />
       }
      
      </section>

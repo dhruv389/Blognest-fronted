@@ -37,7 +37,7 @@ useEffect(()=>{
     </div>
 
     <div className="post_author-deatils">
-        <h5>By : {author?.name}</h5>
+        <h5 style={{textDecoration:"underline"}}>By : {author?.name}</h5>
         <small><ReactTimeAgo date={new Date(createdAt) } locale="en-US"/></small>
     </div>
    </Link>

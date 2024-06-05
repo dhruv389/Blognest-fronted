@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import { Link } from 'react-router-dom'
 import axios from "axios"
 import Loader from '../components/Loader'
@@ -15,7 +14,7 @@ useEffect(()=>{
    const getAuthors = async ()=>{
     setIsLoading(true);
     try {
-      const response= await axios.get(`${process.env.REACT_APP_BASE_URL}/users`)
+      const response= await axios.get(`${process.env.REACT_APP_BASE_URL}/users`);
       setAuthors(response.data);
     } catch (error) {
       console.log(error);
@@ -30,6 +29,9 @@ if(isloding) return <Loader/>
 
   return (
    <section className="authors">
+   <div className="righttext">
+    <h1>Authors</h1>
+   </div>
    { authors.length > 0 ? <div className="container authors_container">
   {
     authors.map(({_id:id,avatar,name,posts})=>{
@@ -49,7 +51,7 @@ if(isloding) return <Loader/>
    </div>
    <div className="authors_info">
     <h4>{name}</h4>
-    <p>Total : {posts}</p>
+    <p>Total Posts : {posts}</p>
    </div>
       </Link>
     })

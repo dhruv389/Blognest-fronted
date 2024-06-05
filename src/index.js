@@ -21,10 +21,14 @@ import Logout from "./pages/Logout"
 import UserProvider from './context/userContext';
 import ScrollToTopOnRefresh from './pages/ScrollTop';
 
+import AnimatedCursor from "react-animated-cursor"
+
+
+
 const router=createBrowserRouter([
   {
     path:"/",
-    element:<UserProvider><Layout/></UserProvider>,
+    element:<UserProvider> <AnimatedCursor/> <Layout/></UserProvider>,
     errorElement:<ErrorPage/>,
     children:[
       {index:true,element:<Home/>},

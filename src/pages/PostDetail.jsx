@@ -74,8 +74,11 @@ if(isLoading) {
       
       }
      
+   <TextToSpeech text={`Hello readers, Our topic for today revolves around ${post_title}, and now, let's delve into the main context.${text}`}  className="textvoice" /> 
+    
+  
+     
       
-      <TextToSpeech text={`Hello readers, Our topic for today revolves around ${post_title}, and now, let's delve into the main context.${text}`}  className="textvoice" />
      
 
 

@@ -17,7 +17,8 @@ const fetchPosts = async ()=>{
   try {
     const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/users/${id}`)
     setPosts(response?.data);
-    console.log(response?.data)
+    console.log(posts)
+   
   } catch (error) {
     console.log(error)
   }
@@ -29,8 +30,9 @@ fetchPosts();
   if(isLoading)   return <Loader/>
 
   return (
+
      <section className="posts">
-    
+         
    
       {posts.length >0 ?   <div className="container posts_container">
         {
