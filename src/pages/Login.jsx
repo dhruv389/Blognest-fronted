@@ -16,8 +16,8 @@ const [error,setError] = useState("");
 const navigate =useNavigate();
 
 const {setCurrentUser} =useContext(UserContext);
-const {currentUser} =useContext(UserContext);
-  const token = currentUser?.token;
+// const {currentUser} =useContext(UserContext);
+//   const token = currentUser?.token;
 
 
   const changeInputHandler=(e)=>{
