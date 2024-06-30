@@ -21,7 +21,8 @@ const PostItem = ({
 
 
   const postTitle = title.length > 30 ? title.substr(0, 30) + "..." : title;
- 
+  const xx=`${process.env.REACT_APP_ASSETS_URL}/uploads/${thumbnill}`
+ console.log(xx.response);
   // const shortDescription =  description.length > 145 ? description.substr(0, 145) + "..." : description;
   return (
     <Link to={`/posts/${postID}`}>
@@ -29,7 +30,7 @@ const PostItem = ({
       <div className="post_thumbnil">
         <img 
           src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${thumbnill}`}
-          alt={"Thumbnail"}
+          alt={""}
         />
       </div>
       <div className="post_content">

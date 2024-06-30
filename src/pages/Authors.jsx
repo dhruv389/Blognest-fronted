@@ -35,15 +35,16 @@ if(isloding) return <Loader/>
    { authors.length > 0 ? <div className="container authors_container">
   {
     authors.map(({_id:id,avatar,name,posts})=>{
+   if(posts>0)
       return <Link key={id} to={`/posts/users/${id}`} className='author'>
 
       
    <div className="author_avatar">
-   {!avatar &&   <img
+   {!avatar ?  <img
                 src={blankprofile}
                 alt=""
-              /> }
-            { avatar &&   <img
+              /> 
+             :  <img
                 src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`}
                 alt=""
               />}

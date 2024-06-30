@@ -381,6 +381,7 @@ footer {
   overflow: hidden;
   border-radius: var(--radius-3);
   min-height:10rem;
+  background-image: url("https://picsum.photos/600/500");
   max-height: 16rem;
 }
 
@@ -660,7 +661,9 @@ height:50vh;
  flex-direction: column;
 
 
- background-image: url(https://source.unsplash.com/random/1600x1800/?comics);
+ /* background-image: url("https://source.unsplash.com/random/1600x1800/?comics"); */
+ background-image: url("https://picsum.photos/seed/1200/400");
+ 
  background-color: #72c6d7;
  background-repeat: no-repeat;
  margin-bottom:7rem;
